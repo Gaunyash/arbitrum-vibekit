@@ -113,7 +113,7 @@ The frontend automatically detects chart generation tools:
 ### Installation
 
 ```bash
-cd arbitrum-vibekit/typescript/lib/community-mcp-tools/coingecko-mcp-server
+cd arbitrum-vibekit/typescript/community/mcp-tools/coingecko-mcp-server
 pnpm install
 pnpm build
 ```
@@ -248,7 +248,7 @@ MCP endpoint available at http://localhost:3011/mcp
 ```yaml
 # compose.yml
 coingecko-mcp-server:
-  build: ./lib/community-mcp-tools/coingecko-mcp-server
+  build: ./community/mcp-tools/coingecko-mcp-server
   ports:
     - '3011:3011'
   environment:

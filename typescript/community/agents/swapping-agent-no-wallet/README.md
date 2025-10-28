@@ -29,7 +29,7 @@ The swapping agent is automatically started when the frontend spins up. To start
 
 ```bash
 git clone https://github.com/EmberAGI/arbitrum-vibekit.git &&
-cd arbitrum-vibekit/typescript/community/swapping-agent-no-wallet
+cd arbitrum-vibekit/typescript/community/agents/swapping-agent-no-wallet
 ```
 
 2. Create a `.env` file based on `.env.example`:

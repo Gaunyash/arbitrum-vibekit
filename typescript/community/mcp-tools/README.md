@@ -24,7 +24,7 @@ The official Ember MCP server providing access to Ember's core AI capabilities a
 
 **Directory**: [`allora-mcp-server/`](./allora-mcp-server/)
 
-**Client agents**: [`allora-price-prediction-agent`](../../community/allora-price-prediction-agent/)
+**Client agents**: [`allora-price-prediction-agent`](../agents/allora-price-prediction-agent/)
 
 Provides access to Allora Network's machine learning predictions and inference data. Enables agents to fetch prediction market data and topic information for AI-powered decision making.
 
@@ -40,9 +40,17 @@ Cryptocurrency price data and interactive chart generation using CoinGecko API. 
 
 **Directory**: [`defisafety-implementation/`](./defisafety-implementation/)
 
-**Client agents**: [`defisafety-agent`](../../community/defisafety-agent/)
+**Client agents**: [`defisafety-agent`](../agents/defisafety-agent/)
 
 Documentation scraping and evaluation tool using RAG (Retrieval Augmented Generation) with DeFiSafety criteria scoring. Enables agents to assess protocol documentation against security and transparency standards.
+
+### Centrifuge MCP Server
+
+**Directory**: [`centrifuge-mcp-server/`](./centrifuge-mcp-server/)
+
+**Client agents**: [`rwa-investment-agent`](../agents/rwa-investment-agent/)
+
+Real-world asset (RWA) investment platform integration providing access to Centrifuge's tokenized credit pools. Enables agents to discover pools, analyze yields, assess risks, track performance, and manage investment orders for institutional-grade credit opportunities.
 
 ## Build Your MCP Tool
 

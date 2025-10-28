@@ -12,16 +12,16 @@ COPY pnpm-lock.yaml* ./
 COPY tsconfig.base.json ./
 
 # Copy the specific package files
-COPY lib/community-mcp-tools/coingecko-mcp-server/package.json ./lib/community-mcp-tools/coingecko-mcp-server/
-COPY lib/community-mcp-tools/coingecko-mcp-server/.npmrc ./lib/community-mcp-tools/coingecko-mcp-server/
+COPY community/mcp-tools/coingecko-mcp-server/package.json ./community/mcp-tools/coingecko-mcp-server/
+COPY community/mcp-tools/coingecko-mcp-server/.npmrc ./community/mcp-tools/coingecko-mcp-server/
 
 # Install dependencies without running prepare scripts
 RUN pnpm install --filter=@arbitrum-vibekit/coingecko-mcp-server --frozen-lockfile --ignore-scripts
 
 # Copy source code and build
-COPY lib/community-mcp-tools/coingecko-mcp-server/src/ ./lib/community-mcp-tools/coingecko-mcp-server/src/
-COPY lib/community-mcp-tools/coingecko-mcp-server/tsconfig.json ./lib/community-mcp-tools/coingecko-mcp-server/
-WORKDIR /app/lib/community-mcp-tools/coingecko-mcp-server
+COPY community/mcp-tools/coingecko-mcp-server/src/ ./community/mcp-tools/coingecko-mcp-server/src/
+COPY community/mcp-tools/coingecko-mcp-server/tsconfig.json ./community/mcp-tools/coingecko-mcp-server/
+WORKDIR /app/community/mcp-tools/coingecko-mcp-server
 RUN pnpm build
 
 EXPOSE 3011
