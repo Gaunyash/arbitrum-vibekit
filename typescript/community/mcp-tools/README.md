@@ -44,6 +44,14 @@ Cryptocurrency price data and interactive chart generation using CoinGecko API. 
 
 Documentation scraping and evaluation tool using RAG (Retrieval Augmented Generation) with DeFiSafety criteria scoring. Enables agents to assess protocol documentation against security and transparency standards.
 
+### Centrifuge MCP Server
+
+**Directory**: [`centrifuge-mcp-server/`](./centrifuge-mcp-server/)
+
+**Client agents**: [`rwa-investment-agent`](../agents/rwa-investment-agent/)
+
+Real-world asset (RWA) investment platform integration providing access to Centrifuge's tokenized credit pools. Enables agents to discover pools, analyze yields, assess risks, track performance, and manage investment orders for institutional-grade credit opportunities.
+
 ## Build Your MCP Tool
 
 By contributing new MCP tools, you expand the capabilities available to all Vibekit agents. Your tools can enable new DeFi strategies or enhance existing functionality.
