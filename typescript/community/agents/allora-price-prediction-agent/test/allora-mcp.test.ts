@@ -30,7 +30,7 @@ describe('Allora MCP Server Tools', () => {
     console.log('✅ ALLORA_API_KEY is set');
 
     // Find the Allora MCP server path - it should be in the workspace
-    const mcpServerPath = join(__dirname, '../../../lib/community-mcp-tools/allora-mcp-server/dist/index.js');
+    const mcpServerPath = join(__dirname, '../../../mcp-tools/allora-mcp-server/dist/index.js');
     console.log('MCP Server path:', mcpServerPath);
 
     // Create MCP client with stdio transport

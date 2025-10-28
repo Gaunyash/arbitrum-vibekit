@@ -13,7 +13,7 @@ describe('evaluateProtocol Tool', () => {
 
     mockContext = {
       mcpClients: {
-        '/app/lib/community-mcp-tools/defisafety-implementation/dist/index.js': mockMcpClient,
+        '/app/community/mcp-tools/defisafety-implementation/dist/index.js': mockMcpClient,
       },
     } as any;
   });

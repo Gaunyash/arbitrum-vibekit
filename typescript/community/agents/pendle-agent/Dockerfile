@@ -19,7 +19,7 @@ COPY tsconfig.base.json ./
 # 2. Copy all workspace package.json files (to maximise Docker cache)
 # ------------------------------
 COPY lib/ lib/
-COPY community/liquidity-agent-no-wallet/package.json ./community/liquidity-agent-no-wallet/
+COPY community/agents/pendle-agent/package.json ./community/agents/pendle-agent/
 
 # ------------------------------
 # 3. Install deps based on the copied package.json set. Skip lifecycle scripts for now
@@ -36,7 +36,7 @@ COPY . .
 # ------------------------------
 # 5. Build every workspace package that provides a build script (recursive build)
 # ------------------------------
-RUN pnpm --filter liquidity-agent-no-wallet... build
+RUN pnpm --filter pendle-agent-example... build
 
 # Production stage
 FROM node:20-slim AS production
@@ -56,16 +56,15 @@ WORKDIR /app
 RUN npm install -g pnpm@10.7.0
 
 # Copy only what we need from the builder stage
-COPY --from=builder /app/community/liquidity-agent-no-wallet/dist /app/community/liquidity-agent-no-wallet/dist
-COPY --from=builder /app/community/liquidity-agent-no-wallet/encyclopedia /app/community/liquidity-agent-no-wallet/encyclopedia
-COPY --from=builder /app/community/liquidity-agent-no-wallet/package.json /app/community/liquidity-agent-no-wallet/
-COPY --from=builder /app/community/liquidity-agent-no-wallet/node_modules /app/community/liquidity-agent-no-wallet/node_modules
+COPY --from=builder /app/community/agents/pendle-agent/dist /app/community/agents/pendle-agent/dist
+COPY --from=builder /app/community/agents/pendle-agent/package.json /app/community/agents/pendle-agent/
+COPY --from=builder /app/community/agents/pendle-agent/node_modules /app/community/agents/pendle-agent/node_modules
 COPY --from=builder /app/lib /app/lib
 COPY --from=builder /app/node_modules /app/node_modules
 COPY --from=builder /app/node_modules/.pnpm /app/node_modules/.pnpm
 
 # Set the working directory for the final image
-WORKDIR /app/community/liquidity-agent-no-wallet/dist
+WORKDIR /app/community/agents/pendle-agent/dist
 
 # Change ownership to non-root user
 RUN chown -R ember:ember /app
@@ -79,5 +78,5 @@ EXPOSE 3001
 # Use dumb-init to handle signals properly
 ENTRYPOINT ["dumb-init", "--"]
 
-# Start the Liquidity agent (path is relative to the WORKDIR set above)
-CMD ["node", "index.js"]
+# Start the Pendle agent (path is relative to the WORKDIR set above)
+CMD ["node", "index.js"] 

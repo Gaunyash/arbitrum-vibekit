@@ -35,7 +35,7 @@ export const defiSafetyEvaluationSkill = defineSkill({
       args: [
         path.join(
           __dirname,
-          '../../../../lib/community-mcp-tools/defisafety-implementation/dist/index.js',
+          '../../../../mcp-tools/defisafety-implementation/dist/index.js',
         ),
       ],
       env: Object.fromEntries(

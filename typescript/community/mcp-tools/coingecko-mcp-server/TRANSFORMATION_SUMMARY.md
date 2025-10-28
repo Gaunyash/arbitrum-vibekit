@@ -87,7 +87,7 @@ graph LR
 
 ```yaml
 coingecko-mcp-server:
-  build: ./lib/community-mcp-tools/coingecko-mcp-server
+  build: ./community/mcp-tools/coingecko-mcp-server
   ports: ['3011:3011']
 ```
 

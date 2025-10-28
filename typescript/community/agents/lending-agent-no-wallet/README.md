@@ -29,7 +29,7 @@ The lending agent is automatically started when the frontend spins up. To start 
 
 ```bash
 git clone https://github.com/EmberAGI/arbitrum-vibekit.git &&
-cd arbitrum-vibekit/typescript/community/lending-agent-no-wallet
+cd arbitrum-vibekit/typescript/community/agents/lending-agent-no-wallet
 
 ```
 

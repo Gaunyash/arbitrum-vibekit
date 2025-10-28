@@ -7,7 +7,7 @@ This document shows how to integrate the CoinGecko MCP server with the existing 
 First, build the CoinGecko MCP server:
 
 ```bash
-cd arbitrum-vibekit/typescript/lib/community-mcp-tools/coingecko-mcp-server
+cd arbitrum-vibekit/typescript/community/mcp-tools/coingecko-mcp-server
 pnpm install
 pnpm build
 ```

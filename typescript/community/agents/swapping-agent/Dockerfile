@@ -19,7 +19,7 @@ COPY tsconfig.base.json ./
 # 2. Copy all workspace package.json files (to maximise Docker cache)
 # ------------------------------
 COPY lib/ lib/
-COPY community/swapping-agent/package.json ./community/swapping-agent/
+COPY community/agents/swapping-agent/package.json ./community/agents/swapping-agent/
 
 # ------------------------------
 # 3. Install deps based on the copied package.json set. This is cache-friendly and establishes workspace links.
@@ -54,15 +54,15 @@ WORKDIR /app
 RUN npm install -g pnpm@10.7.0
 
 # Copy only what we need from the builder stage
-COPY --from=builder /app/community/swapping-agent/dist /app/community/swapping-agent/dist
-COPY --from=builder /app/community/swapping-agent/package.json /app/community/swapping-agent/
-COPY --from=builder /app/community/swapping-agent/node_modules /app/community/swapping-agent/node_modules
+COPY --from=builder /app/community/agents/swapping-agent/dist /app/community/agents/swapping-agent/dist
+COPY --from=builder /app/community/agents/swapping-agent/package.json /app/community/agents/swapping-agent/
+COPY --from=builder /app/community/agents/swapping-agent/node_modules /app/community/agents/swapping-agent/node_modules
 COPY --from=builder /app/lib /app/lib
 COPY --from=builder /app/node_modules /app/node_modules
 COPY --from=builder /app/node_modules/.pnpm /app/node_modules/.pnpm
 
 # Set the working directory for the final image
-WORKDIR /app/community/swapping-agent/dist
+WORKDIR /app/community/agents/swapping-agent/dist
 
 # Change ownership to non-root user
 RUN chown -R ember:ember /app
