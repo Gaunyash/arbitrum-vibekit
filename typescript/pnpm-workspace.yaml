@@ -13,11 +13,18 @@ catalog:
   dotenv: ^17.2.3
   ai: ^5.0.59
   express: ^5.1.0
+  cors: ^2.8.5
   '@openrouter/ai-sdk-provider': ^1.2.0
   '@emberai/arbitrum-vibekit-core': ^0.1.2
+  '@ai-sdk/openai': ^2.0.69
+  '@centrifuge/sdk': ^1.7.3
+  graphql-request: ^7.3.1
+  viem: ^2.37.9
 
   # Dev dependencies
   '@types/node': ^22.0.0
+  '@types/cors': ^2.8.19
+  '@types/express': ^5.0.3
   typescript: ^5.9.2
   tsx: ^4.20.6
   prettier: ^3.6.2
