@@ -15,12 +15,12 @@ async function main() {
     next();
   });
 
-  const tatumApiKey = process.env.TATUM_API_KEY;
+  const tatumApiKey = process.env['TATUM_API_KEY'];
   if (!tatumApiKey) {
     console.error('TATUM_API_KEY is required');
     process.exit(1);
   }
-  const chain = process.env.TATUM_CHAIN || 'arbitrum-one-mainnet';
+  const chain = process.env['TATUM_CHAIN'] || 'arbitrum-one-mainnet';
 
   const server = await createServer({ tatumApiKey, chain });
 
@@ -32,7 +32,7 @@ async function main() {
   });
 
   app.post('/messages', async (req: Request, res: Response) => {
-    const sessionId = req.query.sessionId as string;
+    const sessionId = req.query['sessionId'] as string;
     const transport = transports[sessionId];
     if (!transport) {
       res.status(400).send('No transport for sessionId');
@@ -60,7 +60,7 @@ async function main() {
     });
   });
 
-  const PORT = process.env.PORT || 3010;
+  const PORT = process.env['PORT'] || 3010;
   app.listen(PORT, () => console.error(`Tatum MCP server listening on ${PORT}`));
 
   const stdioTransport = new StdioServerTransport();
@@ -71,5 +71,4 @@ async function main() {
 }
 
 main().catch(() => process.exit(-1));
-
 
